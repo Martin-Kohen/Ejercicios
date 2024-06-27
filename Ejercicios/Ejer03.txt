@@ -1,0 +1,23 @@
+using System;
+namespace Ej3
+{
+    internal class Program
+    { 
+        public static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int numrandom = rnd.Next(0,11);
+            Console.Write("Ingrese el numero que piensa que yo pense:" );
+            int adivinanza = int.Parse(Console.ReadLine());
+            if( adivinanza == numrandom)
+            {
+                Console.WriteLine("Acertaste!!, el numero era " + numrandom);
+            }
+            else
+            {
+                Console.WriteLine("Te equivocaste, el numero era " + numrandom);
+            }
+            Console.ReadKey();
+        } 
+    }
+}

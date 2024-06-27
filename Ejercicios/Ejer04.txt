@@ -1,0 +1,29 @@
+using System;
+namespace Ej4
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese el número máximo para los números primos:");
+            int numMax = int.Parse(Console.ReadLine());
+            for (int i = 2; i <= numMax; i++)
+            {
+                bool esPrimo = true;
+                for (int k = 2; k < i; k++)
+                {
+                    if (i % k == 0)
+                    {
+                        esPrimo = false;
+                        break;
+                    }
+                }
+                if (esPrimo)
+                {
+                    Console.WriteLine("El número " + i + " es primo");
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}

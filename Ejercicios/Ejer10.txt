@@ -1,0 +1,46 @@
+using System;
+
+namespace ejer10
+{
+    class Program
+    {
+        static void Main()
+        {
+            int opcion;
+            Console.WriteLine("Seleccione que conversión quiere hacer:");
+            Console.WriteLine("1. Metros a Pies");
+            Console.WriteLine("2. Pies a Metros");
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    ConvertirMetrosAPies();
+                    break;
+                case 2:
+                    ConvertirPiesAMetros();
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. Intente de nuevo.");
+                    break;
+            }
+            Console.ReadKey();
+        }
+
+        static void ConvertirMetrosAPies()
+        {
+            Console.WriteLine("Ingrese la cantidad de metros:");
+            double metros = double.Parse(Console.ReadLine());
+            double pies = metros * 3.28084;
+            Console.WriteLine(metros + " metros son aproximadamente "+  pies+ " pies");
+        }
+
+        static void ConvertirPiesAMetros()
+        {
+            Console.WriteLine("Ingrese la cantidad de pies:");
+            double pies = double.Parse(Console.ReadLine());
+            double metros = pies / 3.28084;
+            Console.WriteLine(pies + " pies son aproximadamente " + metros + " metros");
+        }
+    }
+}

@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.NetworkInformation;
+
+
+namespace Ejer09
+{
+    internal class Program
+    {
+        public static int x1;
+        public static int x2;
+        public static int distancia;
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Ingrese su primer eje cartesiano x");
+            x1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese su segundo eje cartesiano x");
+            x2 =  int.Parse(Console.ReadLine());
+            distancia = Calcular(x1, x2);
+            Console.WriteLine("la distancia entre los puntos es de " + distancia); 
+            Console.ReadKey();
+            int Calcular (int x1, int x2){
+
+
+                return Math.Abs(x2 - x1);
+            }
+
+
+        }
+    }
+}
