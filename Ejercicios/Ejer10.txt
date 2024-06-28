@@ -6,7 +6,7 @@ namespace ejer10
     {
         static void Main()
         {
-            int opcion;
+            int opcion, metros, pies;
             Console.WriteLine("Seleccione que conversión quiere hacer:");
             Console.WriteLine("1. Metros a Pies");
             Console.WriteLine("2. Pies a Metros");
@@ -15,11 +15,16 @@ namespace ejer10
             switch (opcion)
             {
                 case 1:
-                    ConvertirMetrosAPies();
+                    Console.WriteLine("Ingrese la cantidad de metros:");
+                    metros = int.Parse(Console.ReadLine());
+                    Console.WriteLine(metros+ " metros, son: " + ConvertirMetrosAPies(metros) + " pies");
                     break;
                 case 2:
-                    ConvertirPiesAMetros();
+                    Console.WriteLine("Ingrese la cantidad de pies:");
+                    pies = int.Parse(Console.ReadLine());
+                    Console.WriteLine(pies + " pies, son: " + ConvertirPiesAMetros(pies) + " metros");
                     break;
+
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");
                     break;
@@ -27,20 +32,14 @@ namespace ejer10
             Console.ReadKey();
         }
 
-        static void ConvertirMetrosAPies()
+        static double ConvertirMetrosAPies(int metros)
         {
-            Console.WriteLine("Ingrese la cantidad de metros:");
-            double metros = double.Parse(Console.ReadLine());
-            double pies = metros * 3.28084;
-            Console.WriteLine(metros + " metros son aproximadamente "+  pies+ " pies");
+            return metros * 3.28084;
         }
 
-        static void ConvertirPiesAMetros()
+        static double ConvertirPiesAMetros(int pies)
         {
-            Console.WriteLine("Ingrese la cantidad de pies:");
-            double pies = double.Parse(Console.ReadLine());
-            double metros = pies / 3.28084;
-            Console.WriteLine(pies + " pies son aproximadamente " + metros + " metros");
+            return pies / 3.28084;
         }
     }
 }
